@@ -24,15 +24,6 @@ def closest_point_index(check, point_list):
     return None
 
 
-def total_distance(check, point_list):
-    """
-    Return the sum of all Manhattan distances from check to each point in
-    point_list.
-    """
-    dist = abs(point_list[:, 0]-check[0]) + abs(point_list[:, 1]-check[1])
-    return sum(dist)
-
-
 xmin = 10**5
 xmax = 0
 ymin = 10**5
@@ -79,12 +70,22 @@ for i in range(xmin, xmax+1):
 # remove points of infinite area from consideration
 for i in infinite_area_points:
     areas[i] = 0
-print(max(areas))
+print("Largest finite area: {}".format(max(areas)))
 
 """
 The second problem is straight forward. Just search each point in the bounding
 box for points with total distance less than the given limit.
 """
+
+
+def total_distance(check, point_list):
+    """
+    Return the sum of all Manhattan distances from check to each point in
+    point_list.
+    """
+    dist = abs(point_list[:, 0]-check[0]) + abs(point_list[:, 1]-check[1])
+    return sum(dist)
+
 
 num_good_points = 0
 limit = 10**4
@@ -96,4 +97,4 @@ for i in range(xmin, xmax+1):
             num_good_points += 1
 
 
-print(num_good_points)
+print("Number of points with total Manhattan distance less than {}: {}".format(limit, num_good_points))

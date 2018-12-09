@@ -34,7 +34,7 @@ polymer = polymer.strip()
 
 basic_polymer_react = full_react(polymer)
 
-print(len(basic_polymer_react))
+print("Length of reacted polymer: {}".format(len(basic_polymer_react)))
 
 
 """
@@ -52,4 +52,4 @@ for i in range(26):
     if p_len < best_len:
         best_len = p_len
 
-print(best_len)
+print("Minimal reacted polymer length with one letter removed: {}".format(best_len))
