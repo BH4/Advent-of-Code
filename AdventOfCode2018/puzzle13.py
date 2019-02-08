@@ -9,9 +9,10 @@ Each cart will have to keep track of weather it will be turning right, left,
 or not turning at the next intersection.
 The turns can also be accomplished by matrix multiplication.
 
-Note that coordinates are stored as y, x and the y coordinate increases going down.
-########## Note that cart positions are stored as y, x but velocities are vx, vy (not actualy necesary. everything stored y, x as long as I swap the right and left turn matricies)
+Note that coordinates are stored as y, x and the y coordinate increases going
+down. This differs from the solutions because they are given as x,y
 """
+
 import numpy as np
 from copy import deepcopy
 
