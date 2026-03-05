@@ -1,5 +1,6 @@
 from copy import deepcopy
 
+
 def step(state):
     recipes, elf1, elf2 = state
 
